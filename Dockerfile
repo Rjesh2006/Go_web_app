@@ -3,7 +3,7 @@
 # and run the container
 
 # Start with a base image
-FROM golang:1.21 as base
+FROM golang:1.21 AS base
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -27,6 +27,7 @@ FROM gcr.io/distroless/base
 
 # Copy the binary from the previous stage
 COPY --from=base /app/main .
+
 
 # Copy the static files from the previous stage
 COPY --from=base /app/static ./static
