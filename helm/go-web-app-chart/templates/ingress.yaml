@@ -1,4 +1,5 @@
 # Ingress resource for the application
+# Ingress resource for the application
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -6,6 +7,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx  # ✅ Add this line
   rules:
   - host: go-web-app.local
     http:
@@ -17,4 +19,5 @@ spec:
             name: go-web-app
             port:
               number: 80
+
 
