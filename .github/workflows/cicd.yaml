@@ -84,7 +84,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT_SEC_TOKEN }}
+          token: ${{ secrets.PAT_SEC_TOKEN }} 
 
       - name: Update tag in Helm chart
         run: |
@@ -97,3 +97,5 @@ jobs:
           git add helm/go-web-app-chart/values.yaml
           git commit -m "Update tag in Helm chart"
           git push
+ 
+ 
